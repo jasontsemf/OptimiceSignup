@@ -16,9 +16,9 @@ window.addEventListener("DOMContentLoaded", () => {
         const people = await response.json();
         const list = document.getElementById("people-list");
         const msg = document.getElementById("message");
-
-        msg.innerHTML = `Thank you for signing up, our ${numberToOrdinal(people.people.length)} follower!`;                
-        console.log(numberToOrdinal(people.people.length));
+        const link = `Return to <a href="https://jasontsemf.github.io/optimice.html">OptiMice Page</a>`;
+        msg.innerHTML = `Thank you for signing up, our ${numberToOrdinal(people.people.length)} follower! <br>${link}`;                
+        console.log(unixConvertor(people.people.created));
         name.value = "";
         email.value = "";
     }
