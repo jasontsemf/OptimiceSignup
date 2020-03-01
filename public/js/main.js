@@ -1,5 +1,12 @@
 window.addEventListener("DOMContentLoaded", () => {
     const button = document.getElementById("btn");
+    const input = document.getElementById("email");
+    input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          button.click();
+        }
+    });
     button.onclick = async () => {
         let name = document.getElementById("name");
         let email = document.getElementById("email");

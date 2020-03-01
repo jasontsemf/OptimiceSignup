@@ -17,8 +17,6 @@ function getPeople(){
 
 function addPerson(person){
     const unixTimeCreated = new Date().getTime();
-    // const newData = Object.assign({"created": unixTimeCreated}, request.body);
-
     const people = getPeople();
     const timePerson = Object.assign({"created": unixTimeCreated}, person);
     people.people.push(timePerson);
@@ -36,12 +34,11 @@ app.get("/signup", (req, res) => {
 });
 
 app.post("/signup", (req, res) => {
-
     const person = req.body;
     const people = addPerson(person);
     res.json(people);
 })
 
 app.listen(3000, () => {
-    console.log("Server listinening at http://localhost:3000!")
+    console.log("Server listening at http://localhost:3000!")
 });
